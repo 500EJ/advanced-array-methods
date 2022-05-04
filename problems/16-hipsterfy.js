@@ -14,7 +14,18 @@ console.log(hipsterfy('panthers are great animals')); // 'panthrs ar gret animls
 
 */
 
-// your code here
+function removeLastVowel(str) {
+  for (let i = str.length - 1; i >= 0; i--) {
+    if ("aeiou".includes(str[i])) return str.slice(0, i) + str.slice(i + 1);
+  }
+}
+
+function hipsterfy(sentence) {
+  return sentence
+    .split(" ")
+    .map((word) => removeLastVowel(word))
+    .join(" ");
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

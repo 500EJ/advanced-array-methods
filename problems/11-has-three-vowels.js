@@ -16,7 +16,19 @@ console.log(hasThreeVowels('go home'));         //  false
 
 */
 
-// your code here
+function hasThreeVowels(str) {
+  return (
+    str
+      .split("")
+      .reduce(
+        (uniqueVowels, char) =>
+          "aeiou".includes(char) && !uniqueVowels.includes(char)
+            ? uniqueVowels.concat(char)
+            : uniqueVowels,
+        []
+      ).length >= 3
+  );
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

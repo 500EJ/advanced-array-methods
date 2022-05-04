@@ -14,7 +14,11 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 */
 
-// your code here
+function unique(arr) {
+  return arr.reduce((uniques, el) => {
+    return !uniques.includes(el) ? uniques.concat(el) : uniques;
+  }, []);
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

@@ -13,7 +13,9 @@ console.log(avgVal([])); // null
 
 */
 
-// your code here
+function avgVal(arr) {
+  return arr.reduce((acc, el) => acc + el, 0) / arr.length || null;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

@@ -28,7 +28,26 @@ console.log(repeatingTranslate("her family flew to France"));   // "herer family
 
 */
 
-// your code here
+function lastVowelIndex(str) {
+  for (let i = str.length - 1; i >= 0; i--) {
+    if ("aeiou".includes(str[i])) return i;
+  }
+}
+
+function repeatingTranslate(sentence) {
+  return sentence
+    .split(" ")
+    .map((word) => {
+      if (word.length < 3) {
+        return word;
+      } else if ("aeiou".includes(word[word.length - 1])) {
+        return word + word;
+      } else {
+        return word + word.slice(lastVowelIndex(word));
+      }
+    })
+    .join(" ");
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

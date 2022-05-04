@@ -25,7 +25,13 @@ console.log(twoDimensionalProduct(arr2)); // 88
 
 */
 
-// your code here
+function twoDimensionalProduct(array) {
+  let product = 1;
+  array.forEach((arr) => {
+    arr.forEach((n) => (product *= n));
+  });
+  return product;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
